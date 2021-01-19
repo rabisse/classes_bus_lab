@@ -3,6 +3,7 @@ class Bus:
         self.route_number = route_number
         self.destination = destination
         self.passenger_list = []
+        self.max_capacity = 2
 
     def drive(self):
         return "Brum brum"
@@ -21,5 +22,15 @@ class Bus:
 
     def pick_up_from_stop(self, bus_stop):
         for person in bus_stop.queue:
-            self.pick_up(bus_stop.queue)
-        bus_stop.clear()
+            self.pick_up(person)
+
+
+    # def pick_up_too_many(self, bus_stop):
+    #     passengers = self.passenger_count
+    #     max_cap = self.max_capacity
+    #     for person in bus_stop.queue:
+    #         if passengers == max_cap:
+    #             return
+    #         else:
+    #             self.pick_up(person)
+    #             passengers += 1

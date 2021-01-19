@@ -12,7 +12,7 @@ class TestBus(unittest.TestCase):
 
     def test_has_destination(self):
         self.assertEqual("Ocean Terminal", self.bus.destination)
-
+      
     def test_can_drive(self):
         self.assertEqual("Brum brum", self.bus.drive())
 
@@ -44,3 +44,15 @@ class TestBus(unittest.TestCase):
         bus_stop.add_to_queue(person_2)
         self.bus.pick_up_from_stop(bus_stop)
         self.assertEqual(2, self.bus.passenger_count())
+
+
+    # def test_will_not_overload(self):
+    #     person_1 = Person("Guido van Rossum", 64)
+    #     person_2 = Person("Carol Willing", 50)
+    #     person_3 = Person("Bob Bob", 100)
+    #     bus_stop = BusStop("Waverly Station")
+    #     bus_stop.add_to_queue(person_1)
+    #     bus_stop.add_to_queue(person_2)
+    #     bus_stop.add_to_queue(person_3)
+    #     self.bus.pick_up_too_many(bus_stop)
+    #     self.assertEqual(2, self.bus.passenger_count())
